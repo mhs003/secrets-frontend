@@ -72,7 +72,7 @@ export default function App() {
                         !TokenProvider.get() ? <Signup /> : <Navigate to="/" />
                     }
                 />
-                <Route default element={<NotFound />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </>
     );
