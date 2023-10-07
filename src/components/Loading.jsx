@@ -3,8 +3,6 @@ import { ImSpinner4 } from "react-icons/im";
 import Loader from "../States/Loader";
 import { useSignal } from "@preact/signals-react";
 import { useEffect } from "react";
-// import { useSignal } from "@preact/signals";
-// import { useEffect } from "preact/hooks";
 
 export default function Loading() {
     const dots = useSignal("");

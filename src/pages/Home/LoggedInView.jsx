@@ -11,7 +11,6 @@ import { useEffect } from "react";
 
 export default function LoggedInView() {
     const modalOpened = useSignal(false);
-    // const revalidateSignal = useSignal(0);
     const isLoading = useSignal(false);
     const inputs = useSignal({
         title: "",

@@ -1,13 +1,9 @@
-// import { useLocation } from "preact-iso";
-// import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ToastProvider from "../States/ToastProvider";
 import TokenProvider from "../States/TokenProvider";
 import UserProvider from "../States/UserProvider";
 
 export default function Header() {
-    // const { url } = useLocation();
-
     return (
         <header className="flex justify-between items-center bg-slate-800 text-white p-4 shadow-lg">
             <h1

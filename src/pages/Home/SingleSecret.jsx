@@ -22,11 +22,9 @@ export default function SingleSecret({ index, secret }) {
                     },
                 })
                 .then((res) => {
-                    // console.log(res.data);
                     SecretProvider.deleteOne(index);
                 })
                 .catch((err) => {
-                    // console.log(err.response.data);
                     ToastProvider.open(
                         "Something went wrong. Please try again later.",
                         3
@@ -55,9 +53,7 @@ export default function SingleSecret({ index, secret }) {
                         }
                     )
                     .then((res) => {
-                        // console.log("hidding");
                         SecretProvider.sync();
-                        // console.log(res.data);
                     })
                     .catch((err) => {
                         console.log(err.response.data);
@@ -87,9 +83,7 @@ export default function SingleSecret({ index, secret }) {
                         }
                     )
                     .then((res) => {
-                        // console.log("unhidding");
                         SecretProvider.sync();
-                        // console.log(res.data);
                     })
                     .catch((err) => {
                         console.log(err.response.data);
@@ -104,9 +98,6 @@ export default function SingleSecret({ index, secret }) {
             }
         }
     };
-    /* effect(() => {
-        // console.log(SecretProvider.getSecrets());
-    }); */
     return (
         <div className="w-full flex flex-col gap-4 border-2 border-transparent hover:border-slate-700 hover:shadow-lg p-5 rounded-[30px]">
             {secret.hidden ? (

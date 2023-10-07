@@ -1,4 +1,3 @@
-// import { useMemo } from "preact/hooks";
 import SEO from "../components/SEO";
 import { ImSpinner4 } from "react-icons/im";
 import ToastProvider from "../States/ToastProvider";
@@ -6,23 +5,14 @@ import { authAPI } from "../utils/server";
 import TokenProvider from "../States/TokenProvider";
 import { hrefTo } from "../utils/Navigator";
 import BackButton from "../components/BackButton";
-// import { useLocation } from "react-router-dom";
-import { effect, useSignal } from "@preact/signals-react";
-import { useMemo } from "react";
+import { useSignal } from "@preact/signals-react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
-    // const url = useLocation();
-
     // Local states
     const isLoading = useSignal(false);
     const inputs = useSignal({ uname: "", passwd: "" });
-    const gotRegistered = useSignal(false);
     // ^^^^^^^^^^^^
-
-    const queryParams = useMemo(
-        () => new URLSearchParams(window.location.search),
-        []
-    );
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
@@ -49,18 +39,6 @@ export default function Login() {
                 isLoading.value = false;
             });
     };
-
-    effect(() => {
-        const pk = queryParams.get("registered");
-        if (!gotRegistered.value) {
-            if (pk === "true") {
-                ToastProvider.open(
-                    "Registration succeed! Please login to continue."
-                );
-                gotRegistered.value = true;
-            }
-        }
-    });
 
     return (
         <div className="flex justify-center items-center h-[100dvh]">
@@ -139,12 +117,12 @@ export default function Login() {
                                 "Sign In"
                             )}
                         </button>
-                        <a
+                        <Link
                             className="inline-block align-baseline font-bold text-sm text-blue-400 px-3 py-2 rounded transition-transform active:scale-90 border border-transparent hover:border-blue-400"
-                            href="/signup"
+                            to="/signup"
                         >
                             Create an account
-                        </a>
+                        </Link>
                     </div>
                 </form>
                 <p className="text-center text-white text-xs">

@@ -1,12 +1,14 @@
 import SEO from "../components/SEO";
 import { ImSpinner4 } from "react-icons/im";
 import { authAPI } from "../utils/server";
-import { hrefTo } from "../utils/Navigator";
 import ToastProvider from "../States/ToastProvider";
 import BackButton from "../components/BackButton";
 import { useSignal } from "@preact/signals-react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
+    const navigate = useNavigate();
+
     // Local states
     const isLoading = useSignal(false);
     const inputs = useSignal({ uname: "", fname: "", passwd: "" });
@@ -22,8 +24,10 @@ export default function Signup() {
                 passwd: inputs.value.passwd,
             })
             .then((res) => {
-                ToastProvider.open("Registration succeed!");
-                hrefTo("/login?registered=true");
+                ToastProvider.open(
+                    "Registration succeed! Please login to continue."
+                );
+                navigate("/login");
             })
             .catch((err) => {
                 ToastProvider.open(
@@ -133,12 +137,12 @@ export default function Signup() {
                                 "Sign Up"
                             )}
                         </button>
-                        <a
+                        <Link
                             className="inline-block align-baseline font-bold text-sm text-blue-400 px-3 py-2 rounded transition-transform active:scale-90 border border-transparent hover:border-blue-400"
-                            href="/login"
+                            to="/login"
                         >
                             Instead, Login here
-                        </a>
+                        </Link>
                     </div>
                 </form>
                 <p className="text-center text-white text-xs">
