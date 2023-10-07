@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ImSpinner4 } from "react-icons/im";
 import Loader from "../States/Loader";
 import { useSignal } from "@preact/signals-react";

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import SingleSecret from "./SingleSecret";
 import { secretsAPI } from "../../utils/server";
 import TokenProvider from "../../States/TokenProvider";
@@ -80,7 +81,7 @@ export default function LoggedInView() {
                 }
             })
             .catch((err) => {
-                const errType = err.response?.data?.error?.type;
+                // const errType = err.response?.data?.error?.type;
                 SecretProvider.initSecrets(["error_fetching_data"]);
             })
             .finally(() => {

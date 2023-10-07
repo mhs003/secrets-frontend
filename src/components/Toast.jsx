@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FaTimes } from "react-icons/fa";
 import ToastProvider from "../States/ToastProvider";
 import { FiAlertCircle, FiAlertTriangle } from "react-icons/fi";

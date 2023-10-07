@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:4000";
-// const baseURL = "http://192.168.43.58:4000";
+// const baseURL = "http://localhost:4000";
+const baseURL = "https://secrets-api.fly.dev";
 
 const API = axios.create({
     baseURL: baseURL,
