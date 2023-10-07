@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function LoggedOutView() {
     return (
@@ -9,9 +10,9 @@ export default function LoggedOutView() {
                 </h1>
                 <p className="text-xl">
                     Please{" "}
-                    <a className="p-link" href="/login">
+                    <Link className="p-link" to="/login">
                         login
-                    </a>{" "}
+                    </Link>{" "}
                     to access the full website.
                 </p>
             </div>

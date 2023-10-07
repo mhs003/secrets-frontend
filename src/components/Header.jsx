@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <header className="flex justify-between items-center bg-slate-800 text-white p-4 shadow-lg">
             <h1
-                onClick={() => ToastProvider.open("Hello World", 1)}
+                onClick={() => ToastProvider.open("Hello World", 2)}
                 className="font-bold text-2xl transition-transform active:scale-90 cursor-pointer user-select-none "
             >
                 Secrets?!
