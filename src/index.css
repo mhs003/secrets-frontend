@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: #fff;
+    background-color: rgb(15 23 42 / 1);
+}
+
+a.p-link,
+a.p-link:visited {
+    color: #4c91ff;
+}
+
+a.p-link:hover {
+    text-decoration: underline;
+}
