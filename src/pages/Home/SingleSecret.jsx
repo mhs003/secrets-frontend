@@ -127,7 +127,7 @@ export default function SingleSecret({ index, secret }) {
                     </h2>
                     <div className="flex gap-3">
                         <div className="h-full w-1 bg-slate-500 rounded-full" />
-                        <p className="whitespace-pre-line">{secret.body}</p>
+                        <p className="whitespace-pre-wrap">{secret.body}</p>
                     </div>
                     <div className="flex gap-4">
                         <span
